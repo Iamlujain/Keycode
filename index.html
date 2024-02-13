@@ -1,9 +1,71 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title> Put Keycode Here</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #1c1c1c;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(247, 243, 243, 0);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 30px;
+            margin-bottom: 10px;
+            border: 1px solid #cccccc65;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #606C38;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px; 
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #283618;
+    
+        }
+        .container h3 {
+    color: #ffffff; /* Change to your desired color */
+}
 
+    </style>
+</head>
 <body>
-    <p>HI!</p>
+    <div class="container">
+        <h3>Two digits for each, the day the legend was born...</h3>
+        <form id="passwordForm" action="javascript:void(0);">
+            <input type="text" id="passwordInput" placeholder="Enter the keycode">
+            <button type="submit">GO</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("passwordForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var password = document.getElementById("passwordInput").value;
+            if (password === "060393") { // Change "yourpassword" to your desired password
+                window.location.href = "success.html"; // Redirect to success page
+            } else {
+                alert("Incorrect password! Please try again.");
+            }
+        });
+    </script>
 </body>
 </html>
